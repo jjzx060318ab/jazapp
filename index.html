@@ -381,46 +381,57 @@
   </div>
 </div>
 
-<script>
-/* ================================================================
- * 配置区 —— 部署前必须粘贴你的 Supabase 项目信息（两行）
- * 在 supabase.com 后台：Project Settings → API
- * ================================================================ */
-const SUPABASE_URL = "https://zsvbczqlsmgiupviuxxq.supabase.co";   // ← 你的项目地址
-const SUPABASE_ANON_KEY = "sb_publishable_1qf3jqhAP3SCiJYcJfZZIg_866w_zW_";          // ← 你的 anon public key
-const APP_VERSION = "1.0.0";
-const GITHUB_REPO = "jjzx060318ab/jazapp";                 // 用于检查 GitHub 上的新版本
-/* ================================================================ */
-
-const $ = (s) => document.querySelector(s);
-
-/* ---------- 工具 ---------- */
-function toast(msg, type = "info", ms = 2600) {
-  const wrap = document.querySelector(".toast-wrap") || (() => {
-    const w = document.createElement("div");
+<script>function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regeneratorValues(e) { if (null != e) { var t = e["function" == typeof Symbol && Symbol.iterator || "@@iterator"], r = 0; if (t) return t.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) return { next: function next() { return e && r >= e.length && (e = void 0), { value: e && e[r++], done: !e }; } }; } throw new TypeError(_typeof(e) + " is not iterable"); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _regenerator() { var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i.return) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+var SUPABASE_URL = "https://zsvbczqlsmgiupviuxxq.supabase.co";
+var SUPABASE_ANON_KEY = "sb_publishable_1qf3jqhAP3SCiJYcJfZZIg_866w_zW_";
+var APP_VERSION = "1.0.0";
+var GITHUB_REPO = "jjzx060318ab/jazapp";
+var $ = function $(s) {
+  return document.querySelector(s);
+};
+function toast(msg) {
+  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "info";
+  var ms = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 2600;
+  var wrap = document.querySelector(".toast-wrap") || function () {
+    var w = document.createElement("div");
     w.className = "toast-wrap";
     document.body.appendChild(w);
     return w;
-  })();
-  const t = document.createElement("div");
+  }();
+  var t = document.createElement("div");
   t.className = "toast " + (type === "ok" ? "ok" : type === "err" ? "err" : "");
-  const icon = type === "ok" ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>'
-    : type === "err" ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>'
-    : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg>';
+  var icon = type === "ok" ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m4.5 12.5 5 5 10-11"/></svg>' : type === "err" ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>' : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg>';
   t.innerHTML = icon + "<span>" + msg + "</span>";
   wrap.appendChild(t);
-  setTimeout(() => { t.style.opacity = "0"; t.style.transition = "opacity .3s"; setTimeout(() => t.remove(), 320); }, ms);
+  setTimeout(function () {
+    t.style.opacity = "0";
+    t.style.transition = "opacity .3s";
+    setTimeout(function () {
+      return t.remove();
+    }, 320);
+  }, ms);
 }
 function errText(e) {
-  let m = "";
+  var m = "";
   try {
-    if (typeof e === "string") m = e;
-    else if (e && e.error_description) m = e.error_description;
-    else if (e && e.msg) m = e.msg;
-    else if (e && e.message) {
-      try { const j = JSON.parse(e.message); m = j.message || e.message; } catch (_) { m = e.message; }
-    }
-    else if (e && e.code === "P0001") m = "操作失败，请稍后再试";
+    if (typeof e === "string") m = e;else if (e && e.error_description) m = e.error_description;else if (e && e.msg) m = e.msg;else if (e && e.message) {
+      try {
+        var j = JSON.parse(e.message);
+        m = j.message || e.message;
+      } catch (_) {
+        m = e.message;
+      }
+    } else if (e && e.code === "P0001") m = "操作失败，请稍后再试";
   } catch (_) {}
   m = m || "出错了，请稍后再试";
   if (/not confirmed|confirm.*email/i.test(m)) m = "邮箱还没确认：请到邮箱点确认链接，或在后台关闭邮箱确认";
@@ -435,312 +446,744 @@ function errText(e) {
   return m;
 }
 function esc(s) {
-  return String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+    return {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[c];
+  });
 }
 function timeAgo(t) {
-  const d = (Date.now() - new Date(t).getTime()) / 1000;
+  var d = (Date.now() - new Date(t).getTime()) / 1000;
   if (d < 60) return "刚刚";
   if (d < 3600) return Math.floor(d / 60) + " 分钟前";
   if (d < 86400) return Math.floor(d / 3600) + " 小时前";
   if (d < 86400 * 7) return Math.floor(d / 86400) + " 天前";
   return new Date(t).toLocaleDateString("zh-CN");
 }
-
-/* ---------- 会话 ---------- */
-const Session = {
-  get token() { return localStorage.getItem("fa_token"); },
-  get user() {
-    try { return JSON.parse(localStorage.getItem("fa_user") || "null"); } catch (_) { return null; }
+var Session = {
+  get token() {
+    return localStorage.getItem("fa_token");
   },
-  save(token, user) {
+  get user() {
+    try {
+      return JSON.parse(localStorage.getItem("fa_user") || "null");
+    } catch (_) {
+      return null;
+    }
+  },
+  save: function save(token, user) {
     localStorage.setItem("fa_token", token);
     localStorage.setItem("fa_user", JSON.stringify(user));
   },
-  clear() {
+  clear: function clear() {
     localStorage.removeItem("fa_token");
     localStorage.removeItem("fa_user");
     localStorage.removeItem("fa_family");
   },
   get family() {
-    try { return JSON.parse(localStorage.getItem("fa_family") || "null"); } catch (_) { return null; }
+    try {
+      return JSON.parse(localStorage.getItem("fa_family") || "null");
+    } catch (_) {
+      return null;
+    }
   },
-  saveFamily(f) { localStorage.setItem("fa_family", JSON.stringify(f)); }
+  saveFamily: function saveFamily(f) {
+    localStorage.setItem("fa_family", JSON.stringify(f));
+  }
 };
-
-/* ---------- Supabase 请求 ---------- */
 function apiHeaders(token) {
   return {
     "apikey": SUPABASE_ANON_KEY,
     "Authorization": "Bearer " + (token || SUPABASE_ANON_KEY),
-    "Content-Type": "application/json",
+    "Content-Type": "application/json"
   };
 }
-async function apiFetch(url, opts = {}) {
-  const res = await fetch(url, opts);
-  let data = null;
-  const ct = res.headers.get("content-type") || "";
-  if (ct.includes("json")) { try { data = await res.json(); } catch (_) {} }
-  if (!res.ok) {
-    const msg = data && (data.msg || data.message || data.error_description || data.detail) || ("请求失败 " + res.status);
-    throw { status: res.status, message: msg, data };
-  }
-  return data;
+function apiFetch(_x) {
+  return _apiFetch.apply(this, arguments);
 }
-
-/* ---------- 视图切换 ---------- */
-const views = ["view-login", "view-welcome", "view-album"];
+function _apiFetch() {
+  _apiFetch = _asyncToGenerator(_regenerator().m(function _callee6(url) {
+    var opts,
+      res,
+      data,
+      ct,
+      msg,
+      _args6 = arguments,
+      _t6;
+    return _regenerator().w(function (_context6) {
+      while (1) switch (_context6.p = _context6.n) {
+        case 0:
+          opts = _args6.length > 1 && _args6[1] !== undefined ? _args6[1] : {};
+          _context6.n = 1;
+          return fetch(url, opts);
+        case 1:
+          res = _context6.v;
+          data = null;
+          ct = res.headers.get("content-type") || "";
+          if (!ct.includes("json")) {
+            _context6.n = 5;
+            break;
+          }
+          _context6.p = 2;
+          _context6.n = 3;
+          return res.json();
+        case 3:
+          data = _context6.v;
+          _context6.n = 5;
+          break;
+        case 4:
+          _context6.p = 4;
+          _t6 = _context6.v;
+        case 5:
+          if (res.ok) {
+            _context6.n = 6;
+            break;
+          }
+          msg = data && (data.msg || data.message || data.error_description || data.detail) || "请求失败 " + res.status;
+          throw {
+            status: res.status,
+            message: msg,
+            data: data
+          };
+        case 6:
+          return _context6.a(2, data);
+      }
+    }, _callee6, null, [[2, 4]]);
+  }));
+  return _apiFetch.apply(this, arguments);
+}
+var views = ["view-login", "view-welcome", "view-album"];
 function showView(name) {
-  views.forEach(v => $("#" + v).classList.toggle("hidden", v !== name));
+  views.forEach(function (v) {
+    return $("#" + v).classList.toggle("hidden", v !== name);
+  });
 }
 function renderUserMeta() {
-  const u = Session.user;
-  const name = (u && (u.user_metadata && u.user_metadata.nickname)) || (u && (u.email || "家人"));
-  const ch = (name || "家").trim().charAt(0).toUpperCase();
+  var u = Session.user;
+  var name = u && u.user_metadata && u.user_metadata.nickname || u && (u.email || "家人");
+  var ch = (name || "家").trim().charAt(0).toUpperCase();
   $("#btn-avatar").textContent = ch;
   $("#welcome-name").textContent = name;
-  $("#menu-user-info").textContent = (u && u.email) || name;
+  $("#menu-user-info").textContent = u && u.email || name;
 }
-
-/* ---------- 认证 ---------- */
-async function authSignup(email, password, nickname) {
-  const data = await apiFetch(SUPABASE_URL + "/auth/v1/signup", {
-    method: "POST",
-    headers: apiHeaders(),
-    body: JSON.stringify({ email, password, data: { nickname } }),
-  });
-  if (data && data.access_token) {
-    Session.save(data.access_token, data.user);
-  }
-  return data;
+function authSignup(_x2, _x3, _x4) {
+  return _authSignup.apply(this, arguments);
 }
-async function authLogin(email, password) {
-  const data = await apiFetch(SUPABASE_URL + "/auth/v1/token?grant_type=password", {
-    method: "POST",
-    headers: apiHeaders(),
-    body: JSON.stringify({ email, password }),
-  });
-  Session.save(data.access_token, data.user);
-  return data;
+function _authSignup() {
+  _authSignup = _asyncToGenerator(_regenerator().m(function _callee7(email, password, nickname) {
+    var data;
+    return _regenerator().w(function (_context7) {
+      while (1) switch (_context7.n) {
+        case 0:
+          _context7.n = 1;
+          return apiFetch(SUPABASE_URL + "/auth/v1/signup", {
+            method: "POST",
+            headers: apiHeaders(),
+            body: JSON.stringify({
+              email: email,
+              password: password,
+              data: {
+                nickname: nickname
+              }
+            })
+          });
+        case 1:
+          data = _context7.v;
+          if (data && data.access_token) {
+            Session.save(data.access_token, data.user);
+          }
+          return _context7.a(2, data);
+      }
+    }, _callee7);
+  }));
+  return _authSignup.apply(this, arguments);
 }
-async function authMe() {
-  if (!Session.token) return null;
-  try {
-    const u = await apiFetch(SUPABASE_URL + "/auth/v1/user", { headers: apiHeaders(Session.token) });
-    Session.save(Session.token, u);
-    return u;
-  } catch (_) { return null; }
+function authLogin(_x5, _x6) {
+  return _authLogin.apply(this, arguments);
 }
-
-/* ---------- 家族 ---------- */
-function genCode(len = 6) {
-  const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  let s = "";
-  for (let i = 0; i < len; i++) s += chars[Math.floor(Math.random() * chars.length)];
+function _authLogin() {
+  _authLogin = _asyncToGenerator(_regenerator().m(function _callee8(email, password) {
+    var data;
+    return _regenerator().w(function (_context8) {
+      while (1) switch (_context8.n) {
+        case 0:
+          _context8.n = 1;
+          return apiFetch(SUPABASE_URL + "/auth/v1/token?grant_type=password", {
+            method: "POST",
+            headers: apiHeaders(),
+            body: JSON.stringify({
+              email: email,
+              password: password
+            })
+          });
+        case 1:
+          data = _context8.v;
+          Session.save(data.access_token, data.user);
+          return _context8.a(2, data);
+      }
+    }, _callee8);
+  }));
+  return _authLogin.apply(this, arguments);
+}
+function authMe() {
+  return _authMe.apply(this, arguments);
+}
+function _authMe() {
+  _authMe = _asyncToGenerator(_regenerator().m(function _callee9() {
+    var u, _t7;
+    return _regenerator().w(function (_context9) {
+      while (1) switch (_context9.p = _context9.n) {
+        case 0:
+          if (Session.token) {
+            _context9.n = 1;
+            break;
+          }
+          return _context9.a(2, null);
+        case 1:
+          _context9.p = 1;
+          _context9.n = 2;
+          return apiFetch(SUPABASE_URL + "/auth/v1/user", {
+            headers: apiHeaders(Session.token)
+          });
+        case 2:
+          u = _context9.v;
+          Session.save(Session.token, u);
+          return _context9.a(2, u);
+        case 3:
+          _context9.p = 3;
+          _t7 = _context9.v;
+          return _context9.a(2, null);
+      }
+    }, _callee9, null, [[1, 3]]);
+  }));
+  return _authMe.apply(this, arguments);
+}
+function genCode() {
+  var len = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 6;
+  var chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+  var s = "";
+  for (var i = 0; i < len; i++) s += chars[Math.floor(Math.random() * chars.length)];
   return s;
 }
-async function fetchMyFamilies() {
-  return await apiFetch(SUPABASE_URL + "/rest/v1/families?select=*", { headers: apiHeaders(Session.token) });
+function fetchMyFamilies() {
+  return _fetchMyFamilies.apply(this, arguments);
 }
-async function createFamily(name) {
-  // 走数据库安全函数创建（与加入家族同一机制，不受 RLS 策略兼容问题影响）
-  const fam = await apiFetch(SUPABASE_URL + "/rest/v1/rpc/create_family", {
-    method: "POST",
-    headers: { ...apiHeaders(Session.token) },
-    body: JSON.stringify({ p_name: name }),
-  });
-  return fam && fam.id ? fam : null;
+function _fetchMyFamilies() {
+  _fetchMyFamilies = _asyncToGenerator(_regenerator().m(function _callee0() {
+    return _regenerator().w(function (_context0) {
+      while (1) switch (_context0.n) {
+        case 0:
+          _context0.n = 1;
+          return apiFetch(SUPABASE_URL + "/rest/v1/families?select=*", {
+            headers: apiHeaders(Session.token)
+          });
+        case 1:
+          return _context0.a(2, _context0.v);
+      }
+    }, _callee0);
+  }));
+  return _fetchMyFamilies.apply(this, arguments);
 }
-async function joinFamily(code) {
-  const res = await apiFetch(SUPABASE_URL + "/rest/v1/rpc/join_family_by_code", {
-    method: "POST",
-    headers: apiHeaders(Session.token),
-    body: JSON.stringify({ p_code: String(code || "").toUpperCase().trim() }),
-  });
-  return res;
+function createFamily(_x7) {
+  return _createFamily.apply(this, arguments);
 }
-async function fetchMedia(familyId) {
-  return await apiFetch(SUPABASE_URL + "/rest/v1/media?select=*&family_id=eq." + familyId + "&order=created_at.desc", {
-    headers: apiHeaders(Session.token),
-  });
+function _createFamily() {
+  _createFamily = _asyncToGenerator(_regenerator().m(function _callee1(name) {
+    var fam;
+    return _regenerator().w(function (_context1) {
+      while (1) switch (_context1.n) {
+        case 0:
+          _context1.n = 1;
+          return apiFetch(SUPABASE_URL + "/rest/v1/rpc/create_family", {
+            method: "POST",
+            headers: _objectSpread({}, apiHeaders(Session.token)),
+            body: JSON.stringify({
+              p_name: name
+            })
+          });
+        case 1:
+          fam = _context1.v;
+          return _context1.a(2, fam && fam.id ? fam : null);
+      }
+    }, _callee1);
+  }));
+  return _createFamily.apply(this, arguments);
 }
-
-/* ---------- 上传 ---------- */
+function joinFamily(_x8) {
+  return _joinFamily.apply(this, arguments);
+}
+function _joinFamily() {
+  _joinFamily = _asyncToGenerator(_regenerator().m(function _callee10(code) {
+    var res;
+    return _regenerator().w(function (_context10) {
+      while (1) switch (_context10.n) {
+        case 0:
+          _context10.n = 1;
+          return apiFetch(SUPABASE_URL + "/rest/v1/rpc/join_family_by_code", {
+            method: "POST",
+            headers: apiHeaders(Session.token),
+            body: JSON.stringify({
+              p_code: String(code || "").toUpperCase().trim()
+            })
+          });
+        case 1:
+          res = _context10.v;
+          return _context10.a(2, res);
+      }
+    }, _callee10);
+  }));
+  return _joinFamily.apply(this, arguments);
+}
+function fetchMedia(_x9) {
+  return _fetchMedia.apply(this, arguments);
+}
+function _fetchMedia() {
+  _fetchMedia = _asyncToGenerator(_regenerator().m(function _callee11(familyId) {
+    return _regenerator().w(function (_context11) {
+      while (1) switch (_context11.n) {
+        case 0:
+          _context11.n = 1;
+          return apiFetch(SUPABASE_URL + "/rest/v1/media?select=*&family_id=eq." + familyId + "&order=created_at.desc", {
+            headers: apiHeaders(Session.token)
+          });
+        case 1:
+          return _context11.a(2, _context11.v);
+      }
+    }, _callee11);
+  }));
+  return _fetchMedia.apply(this, arguments);
+}
 function uuid() {
   if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
-  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, c => {
-    const r = Math.random() * 16 | 0;
-    return (c === "x" ? r : (r & 0x3 | 0x8)).toString(16);
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+    var r = Math.random() * 16 | 0;
+    return (c === "x" ? r : r & 0x3 | 0x8).toString(16);
   });
 }
-async function uploadOne(file, family, onProgress) {
-  const name = file.name || "";
-  const ext = (name.split(".").pop() || "").toLowerCase().replace(/[^a-z0-9]/g, "");
-  const okExt = ["jpg","jpeg","png","gif","webp","heic","heif","mp4","mov","m4v","webm","avi","3gp","mkv"];
-  const safeExt = okExt.indexOf(ext) >= 0 ? ext : (file.type.startsWith("video") ? "mp4" : "jpg");
-  const path = family.id + "/" + uuid() + "." + safeExt;
-  const type = file.type.startsWith("video") ? "video" : "photo";
-
-  await new Promise((resolve, reject) => {
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", SUPABASE_URL + "/storage/v1/object/family-album/" + path);
-    xhr.setRequestHeader("apikey", SUPABASE_ANON_KEY);
-    xhr.setRequestHeader("Authorization", "Bearer " + Session.token);
-    xhr.setRequestHeader("Content-Type", file.type || "application/octet-stream");
-    xhr.setRequestHeader("x-upsert", "true");
-    xhr.upload.onprogress = (e) => { if (e.lengthComputable && onProgress) onProgress(e.loaded / e.total); };
-    xhr.onload = () => {
-      try {
-        const j = JSON.parse(xhr.responseText);
-        if (j && j.Key) resolve(j); else reject(new Error((j && j.message) || "上传失败"));
-      } catch (_) { reject(new Error("上传失败")); }
-    };
-    xhr.onerror = () => reject(new Error("网络异常，上传失败"));
-    xhr.send(file);
-  });
-
-  const uploaderName = (Session.user && Session.user.user_metadata && Session.user.user_metadata.nickname) || "家人";
-  await apiFetch(SUPABASE_URL + "/rest/v1/media", {
-    method: "POST",
-    headers: { ...apiHeaders(Session.token), Prefer: "return=representation" },
-    body: JSON.stringify({ family_id: family.id, uploader_id: Session.user.id, uploader_name: uploaderName, type, storage_path: path }),
-  });
-  return SUPABASE_URL + "/storage/v1/object/public/family-album/" + path;
+function uploadOne(_x0, _x1, _x10) {
+  return _uploadOne.apply(this, arguments);
 }
-
-let uploadRunning = false;
+function _uploadOne() {
+  _uploadOne = _asyncToGenerator(_regenerator().m(function _callee12(file, family, onProgress) {
+    var name, ext, okExt, safeExt, path, type, uploaderName;
+    return _regenerator().w(function (_context12) {
+      while (1) switch (_context12.n) {
+        case 0:
+          name = file.name || "";
+          ext = (name.split(".").pop() || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+          okExt = ["jpg", "jpeg", "png", "gif", "webp", "heic", "heif", "mp4", "mov", "m4v", "webm", "avi", "3gp", "mkv"];
+          safeExt = okExt.indexOf(ext) >= 0 ? ext : file.type.startsWith("video") ? "mp4" : "jpg";
+          path = family.id + "/" + uuid() + "." + safeExt;
+          type = file.type.startsWith("video") ? "video" : "photo";
+          _context12.n = 1;
+          return new Promise(function (resolve, reject) {
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", SUPABASE_URL + "/storage/v1/object/family-album/" + path);
+            xhr.setRequestHeader("apikey", SUPABASE_ANON_KEY);
+            xhr.setRequestHeader("Authorization", "Bearer " + Session.token);
+            xhr.setRequestHeader("Content-Type", file.type || "application/octet-stream");
+            xhr.setRequestHeader("x-upsert", "true");
+            xhr.upload.onprogress = function (e) {
+              if (e.lengthComputable && onProgress) onProgress(e.loaded / e.total);
+            };
+            xhr.onload = function () {
+              try {
+                var j = JSON.parse(xhr.responseText);
+                if (j && j.Key) resolve(j);else reject(new Error(j && j.message || "上传失败"));
+              } catch (_) {
+                reject(new Error("上传失败"));
+              }
+            };
+            xhr.onerror = function () {
+              return reject(new Error("网络异常，上传失败"));
+            };
+            xhr.send(file);
+          });
+        case 1:
+          uploaderName = Session.user && Session.user.user_metadata && Session.user.user_metadata.nickname || "家人";
+          _context12.n = 2;
+          return apiFetch(SUPABASE_URL + "/rest/v1/media", {
+            method: "POST",
+            headers: _objectSpread(_objectSpread({}, apiHeaders(Session.token)), {}, {
+              Prefer: "return=representation"
+            }),
+            body: JSON.stringify({
+              family_id: family.id,
+              uploader_id: Session.user.id,
+              uploader_name: uploaderName,
+              type: type,
+              storage_path: path
+            })
+          });
+        case 2:
+          return _context12.a(2, SUPABASE_URL + "/storage/v1/object/public/family-album/" + path);
+      }
+    }, _callee12);
+  }));
+  return _uploadOne.apply(this, arguments);
+}
+var uploadRunning = false;
 function progressToast() {
-  const wrap = document.querySelector(".toast-wrap") || (() => {
-    const w = document.createElement("div"); w.className = "toast-wrap"; document.body.appendChild(w); return w;
-  })();
-  const t = document.createElement("div");
+  var wrap = document.querySelector(".toast-wrap") || function () {
+    var w = document.createElement("div");
+    w.className = "toast-wrap";
+    document.body.appendChild(w);
+    return w;
+  }();
+  var t = document.createElement("div");
   t.className = "toast";
   t.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 16V7"/><path d="m7 11 5-5 5 5"/></svg><span style="min-width:120px">上传中</span>';
-  const bar = document.createElement("div"); bar.className = "bar";
-  const fill = document.createElement("i"); fill.style.width = "0%";
-  bar.appendChild(fill); t.appendChild(bar);
+  var bar = document.createElement("div");
+  bar.className = "bar";
+  var fill = document.createElement("i");
+  fill.style.width = "0%";
+  bar.appendChild(fill);
+  t.appendChild(bar);
   wrap.appendChild(t);
   return {
-    update(f, label) {
-      const s = t.querySelector("span");
-      if (s) s.textContent = label || ("上传中 " + Math.round(f * 100) + "%");
+    update: function update(f, label) {
+      var s = t.querySelector("span");
+      if (s) s.textContent = label || "上传中 " + Math.round(f * 100) + "%";
       fill.style.width = Math.min(100, Math.round(f * 100)) + "%";
     },
-    done() { t.remove(); },
+    done: function done() {
+      t.remove();
+    }
   };
 }
-async function handleFiles(list) {
-  if (uploadRunning) { toast("正在上传，请稍候", "err"); return; }
-  const files = Array.from(list || []).filter(f => f.type && (f.type.startsWith("image/") || f.type.startsWith("video/")));
-  if (!files.length) { toast("请选择照片或视频文件", "err"); return; }
-  const family = Session.family;
-  if (!family) return;
-  uploadRunning = true;
-  const total = files.length;
-  let ok = 0, fail = 0;
-  const p = progressToast();
-  p.update(0, "准备上传 0/" + total);
-  for (let i = 0; i < total; i++) {
-    const f = files[i];
-    try {
-      await uploadOne(f, family, frac => p.update((i + frac) / total, "上传中 " + (i + 1) + "/" + total + " · " + (f.name || "").slice(0, 14)));
-      ok++;
-    } catch (err) {
-      fail++;
-      toast((f.name || "文件") + "：" + errText(err), "err", 2400);
-    }
-  }
-  p.done();
-  uploadRunning = false;
-  if (fail) toast("完成：" + ok + " 成功，" + fail + " 失败", "err", 3200);
-  else toast("已上传 " + ok + " 个", "ok", 2400);
-  await loadAlbum();
+function handleFiles(_x11) {
+  return _handleFiles.apply(this, arguments);
 }
-
-/* ---------- 删除 ---------- */
-async function deleteMedia(item) {
-  await apiFetch(SUPABASE_URL + "/rest/v1/media?id=eq." + item.id, { method: "DELETE", headers: apiHeaders(Session.token) });
-  try {
-    await fetch(SUPABASE_URL + "/storage/v1/object/family-album/" + item.storage_path, {
-      method: "DELETE",
-      headers: { apikey: SUPABASE_ANON_KEY, Authorization: "Bearer " + Session.token },
-    });
-  } catch (_) {}
+function _handleFiles() {
+  _handleFiles = _asyncToGenerator(_regenerator().m(function _callee13(list) {
+    var files, family, total, ok, fail, p, _loop, i;
+    return _regenerator().w(function (_context14) {
+      while (1) switch (_context14.n) {
+        case 0:
+          if (!uploadRunning) {
+            _context14.n = 1;
+            break;
+          }
+          toast("正在上传，请稍候", "err");
+          return _context14.a(2);
+        case 1:
+          files = Array.from(list || []).filter(function (f) {
+            return f.type && (f.type.startsWith("image/") || f.type.startsWith("video/"));
+          });
+          if (files.length) {
+            _context14.n = 2;
+            break;
+          }
+          toast("请选择照片或视频文件", "err");
+          return _context14.a(2);
+        case 2:
+          family = Session.family;
+          if (family) {
+            _context14.n = 3;
+            break;
+          }
+          return _context14.a(2);
+        case 3:
+          uploadRunning = true;
+          total = files.length;
+          ok = 0, fail = 0;
+          p = progressToast();
+          p.update(0, "准备上传 0/" + total);
+          _loop = _regenerator().m(function _loop(i) {
+            var f, _t8;
+            return _regenerator().w(function (_context13) {
+              while (1) switch (_context13.p = _context13.n) {
+                case 0:
+                  f = files[i];
+                  _context13.p = 1;
+                  _context13.n = 2;
+                  return uploadOne(f, family, function (frac) {
+                    return p.update((i + frac) / total, "上传中 " + (i + 1) + "/" + total + " · " + (f.name || "").slice(0, 14));
+                  });
+                case 2:
+                  ok++;
+                  _context13.n = 4;
+                  break;
+                case 3:
+                  _context13.p = 3;
+                  _t8 = _context13.v;
+                  fail++;
+                  toast((f.name || "文件") + "：" + errText(_t8), "err", 2400);
+                case 4:
+                  return _context13.a(2);
+              }
+            }, _loop, null, [[1, 3]]);
+          });
+          i = 0;
+        case 4:
+          if (!(i < total)) {
+            _context14.n = 6;
+            break;
+          }
+          return _context14.d(_regeneratorValues(_loop(i)), 5);
+        case 5:
+          i++;
+          _context14.n = 4;
+          break;
+        case 6:
+          p.done();
+          uploadRunning = false;
+          if (fail) toast("完成：" + ok + " 成功，" + fail + " 失败", "err", 3200);else toast("已上传 " + ok + " 个", "ok", 2400);
+          _context14.n = 7;
+          return loadAlbum();
+        case 7:
+          return _context14.a(2);
+      }
+    }, _callee13);
+  }));
+  return _handleFiles.apply(this, arguments);
 }
-
-/* ---------- 渲染 ---------- */
-let currentMedia = [];
+function deleteMedia(_x12) {
+  return _deleteMedia.apply(this, arguments);
+}
+function _deleteMedia() {
+  _deleteMedia = _asyncToGenerator(_regenerator().m(function _callee14(item) {
+    var _t9;
+    return _regenerator().w(function (_context15) {
+      while (1) switch (_context15.p = _context15.n) {
+        case 0:
+          _context15.n = 1;
+          return apiFetch(SUPABASE_URL + "/rest/v1/media?id=eq." + item.id, {
+            method: "DELETE",
+            headers: apiHeaders(Session.token)
+          });
+        case 1:
+          _context15.p = 1;
+          _context15.n = 2;
+          return fetch(SUPABASE_URL + "/storage/v1/object/family-album/" + item.storage_path, {
+            method: "DELETE",
+            headers: {
+              apikey: SUPABASE_ANON_KEY,
+              Authorization: "Bearer " + Session.token
+            }
+          });
+        case 2:
+          _context15.n = 4;
+          break;
+        case 3:
+          _context15.p = 3;
+          _t9 = _context15.v;
+        case 4:
+          return _context15.a(2);
+      }
+    }, _callee14, null, [[1, 3]]);
+  }));
+  return _deleteMedia.apply(this, arguments);
+}
+var currentMedia = [];
 function renderGrid() {
-  const grid = $("#media-grid");
+  var grid = $("#media-grid");
   grid.innerHTML = "";
   $("#a-count").textContent = "共 " + currentMedia.length + " 个";
   $("#empty-state").classList.toggle("hidden", currentMedia.length > 0);
-  currentMedia.forEach((m, i) => {
-    const url = SUPABASE_URL + "/storage/v1/object/public/family-album/" + m.storage_path;
-    const tile = document.createElement("div");
+  currentMedia.forEach(function (m, i) {
+    var url = SUPABASE_URL + "/storage/v1/object/public/family-album/" + m.storage_path;
+    var tile = document.createElement("div");
     tile.className = "tile";
     tile.dataset.i = String(i);
-    const badge = m.type === "video"
-      ? '<span class="tile-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>视频</span>'
-      : "";
-    const who = esc(m.uploader_name || "家人");
-    const when = timeAgo(m.created_at);
-    tile.innerHTML = badge
-      + (m.type === "video"
-        ? '<video muted preload="metadata" src="' + esc(url) + '"></video>'
-        : '<img loading="lazy" src="' + esc(url) + '" alt="">')
-      + '<div class="tile-info"><span>' + who + '</span><span>' + when + '</span></div>'
-      + '<button class="del-btn" data-id="' + m.id + '" title="删除"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0-.8 12a2 2 0 0 1-2 1.9H8.8a2 2 0 0 1-2-1.9L6 7"/></svg></button>';
-    tile.addEventListener("click", (e) => {
+    var badge = m.type === "video" ? '<span class="tile-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5z"/></svg>视频</span>' : "";
+    var who = esc(m.uploader_name || "家人");
+    var when = timeAgo(m.created_at);
+    tile.innerHTML = badge + (m.type === "video" ? '<video muted preload="metadata" src="' + esc(url) + '"></video>' : '<img loading="lazy" src="' + esc(url) + '" alt="">') + '<div class="tile-info"><span>' + who + '</span><span>' + when + '</span></div>' + '<button class="del-btn" data-id="' + m.id + '" title="删除"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M9 7V5a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2m3 0-.8 12a2 2 0 0 1-2 1.9H8.8a2 2 0 0 1-2-1.9L6 7"/></svg></button>';
+    tile.addEventListener("click", function (e) {
       if (e.target.closest(".del-btn")) return;
       openLightbox(Number(tile.dataset.i));
     });
     grid.appendChild(tile);
   });
-  grid.querySelectorAll(".del-btn").forEach(btn => {
-    btn.addEventListener("click", async (e) => {
-      e.stopPropagation();
-      const id = btn.dataset.id;
-      const item = currentMedia.find(x => x.id === id);
-      if (!item) return;
-      if (item.uploader_id !== Session.user.id) { toast("只能删除自己上传的内容", "err"); return; }
-      if (!confirm("确定删除这条" + (item.type === "video" ? "视频" : "照片") + "吗？")) return;
-      try { await deleteMedia(item); toast("已删除", "ok"); await loadAlbum(); }
-      catch (err) { toast(errText(err), "err"); }
-    });
+  grid.querySelectorAll(".del-btn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var _ref = _asyncToGenerator(_regenerator().m(function _callee(e) {
+        var id, item, _t;
+        return _regenerator().w(function (_context) {
+          while (1) switch (_context.p = _context.n) {
+            case 0:
+              e.stopPropagation();
+              id = btn.dataset.id;
+              item = currentMedia.find(function (x) {
+                return x.id === id;
+              });
+              if (item) {
+                _context.n = 1;
+                break;
+              }
+              return _context.a(2);
+            case 1:
+              if (!(item.uploader_id !== Session.user.id)) {
+                _context.n = 2;
+                break;
+              }
+              toast("只能删除自己上传的内容", "err");
+              return _context.a(2);
+            case 2:
+              if (confirm("确定删除这条" + (item.type === "video" ? "视频" : "照片") + "吗？")) {
+                _context.n = 3;
+                break;
+              }
+              return _context.a(2);
+            case 3:
+              _context.p = 3;
+              _context.n = 4;
+              return deleteMedia(item);
+            case 4:
+              toast("已删除", "ok");
+              _context.n = 5;
+              return loadAlbum();
+            case 5:
+              _context.n = 7;
+              break;
+            case 6:
+              _context.p = 6;
+              _t = _context.v;
+              toast(errText(_t), "err");
+            case 7:
+              return _context.a(2);
+          }
+        }, _callee, null, [[3, 6]]);
+      }));
+      return function (_x13) {
+        return _ref.apply(this, arguments);
+      };
+    }());
   });
 }
-
-/* ---------- 流程 ---------- */
-async function boot() {
-  const user = await authMe();
-  if (!user) { Session.clear(); showView("view-login"); return; }
-  renderUserMeta();
-  try {
-    const families = await fetchMyFamilies();
-    if (families && families.length) { Session.saveFamily(families[0]); await enterAlbum(); }
-    else { Session.saveFamily(null); showView("view-welcome"); }
-  } catch (err) {
-    if (Session.family) { await enterAlbum(); }
-    else { showView("view-welcome"); }
-  }
+function boot() {
+  return _boot.apply(this, arguments);
 }
-async function enterAlbum() {
-  const fam = Session.family;
-  if (!fam) return;
-  $("#tb-family-name").textContent = fam.name;
-  $("#tb-invite-code").textContent = "邀请码 " + fam.invite_code;
-  showView("view-album");
-  await loadAlbum();
+function _boot() {
+  _boot = _asyncToGenerator(_regenerator().m(function _callee15() {
+    var user, families, _t0;
+    return _regenerator().w(function (_context16) {
+      while (1) switch (_context16.p = _context16.n) {
+        case 0:
+          _context16.n = 1;
+          return authMe();
+        case 1:
+          user = _context16.v;
+          if (user) {
+            _context16.n = 2;
+            break;
+          }
+          Session.clear();
+          showView("view-login");
+          return _context16.a(2);
+        case 2:
+          renderUserMeta();
+          _context16.p = 3;
+          _context16.n = 4;
+          return fetchMyFamilies();
+        case 4:
+          families = _context16.v;
+          if (!(families && families.length)) {
+            _context16.n = 6;
+            break;
+          }
+          Session.saveFamily(families[0]);
+          _context16.n = 5;
+          return enterAlbum();
+        case 5:
+          _context16.n = 7;
+          break;
+        case 6:
+          Session.saveFamily(null);
+          showView("view-welcome");
+        case 7:
+          _context16.n = 11;
+          break;
+        case 8:
+          _context16.p = 8;
+          _t0 = _context16.v;
+          if (!Session.family) {
+            _context16.n = 10;
+            break;
+          }
+          _context16.n = 9;
+          return enterAlbum();
+        case 9:
+          _context16.n = 11;
+          break;
+        case 10:
+          showView("view-welcome");
+        case 11:
+          return _context16.a(2);
+      }
+    }, _callee15, null, [[3, 8]]);
+  }));
+  return _boot.apply(this, arguments);
 }
-async function loadAlbum() {
-  const fam = Session.family;
-  if (!fam) return;
-  try { currentMedia = await fetchMedia(fam.id); renderGrid(); }
-  catch (err) { toast(errText(err), "err"); }
+function enterAlbum() {
+  return _enterAlbum.apply(this, arguments);
 }
-
-/* ---------- 大图查看 ---------- */
-let lbIndex = 0;
+function _enterAlbum() {
+  _enterAlbum = _asyncToGenerator(_regenerator().m(function _callee16() {
+    var fam;
+    return _regenerator().w(function (_context17) {
+      while (1) switch (_context17.n) {
+        case 0:
+          fam = Session.family;
+          if (fam) {
+            _context17.n = 1;
+            break;
+          }
+          return _context17.a(2);
+        case 1:
+          $("#tb-family-name").textContent = fam.name;
+          $("#tb-invite-code").textContent = "邀请码 " + fam.invite_code;
+          showView("view-album");
+          _context17.n = 2;
+          return loadAlbum();
+        case 2:
+          return _context17.a(2);
+      }
+    }, _callee16);
+  }));
+  return _enterAlbum.apply(this, arguments);
+}
+function loadAlbum() {
+  return _loadAlbum.apply(this, arguments);
+}
+function _loadAlbum() {
+  _loadAlbum = _asyncToGenerator(_regenerator().m(function _callee17() {
+    var fam, _t1;
+    return _regenerator().w(function (_context18) {
+      while (1) switch (_context18.p = _context18.n) {
+        case 0:
+          fam = Session.family;
+          if (fam) {
+            _context18.n = 1;
+            break;
+          }
+          return _context18.a(2);
+        case 1:
+          _context18.p = 1;
+          _context18.n = 2;
+          return fetchMedia(fam.id);
+        case 2:
+          currentMedia = _context18.v;
+          renderGrid();
+          _context18.n = 4;
+          break;
+        case 3:
+          _context18.p = 3;
+          _t1 = _context18.v;
+          toast(errText(_t1), "err");
+        case 4:
+          return _context18.a(2);
+      }
+    }, _callee17, null, [[1, 3]]);
+  }));
+  return _loadAlbum.apply(this, arguments);
+}
+var lbIndex = 0;
 function openLightbox(i) {
   if (!currentMedia.length) return;
   lbIndex = (i + currentMedia.length) % currentMedia.length;
@@ -754,163 +1197,365 @@ function closeLightbox() {
   $("#lb-stage").innerHTML = "";
 }
 function renderLightbox() {
-  const m = currentMedia[lbIndex];
-  const url = SUPABASE_URL + "/storage/v1/object/public/family-album/" + m.storage_path;
-  $("#lb-stage").innerHTML = m.type === "video"
-    ? '<video controls autoplay src="' + esc(url) + '"></video>'
-    : '<img src="' + esc(url) + '" alt="">';
+  var m = currentMedia[lbIndex];
+  var url = SUPABASE_URL + "/storage/v1/object/public/family-album/" + m.storage_path;
+  $("#lb-stage").innerHTML = m.type === "video" ? '<video controls autoplay src="' + esc(url) + '"></video>' : '<img src="' + esc(url) + '" alt="">';
   $("#lb-meta").textContent = esc(m.uploader_name || "家人") + " · " + new Date(m.created_at).toLocaleString("zh-CN");
   $("#lb-prev").classList.toggle("hidden", currentMedia.length <= 1);
   $("#lb-next").classList.toggle("hidden", currentMedia.length <= 1);
 }
 $("#lb-close").addEventListener("click", closeLightbox);
-$("#lb-prev").addEventListener("click", (e) => { e.stopPropagation(); lbIndex = (lbIndex - 1 + currentMedia.length) % currentMedia.length; renderLightbox(); });
-$("#lb-next").addEventListener("click", (e) => { e.stopPropagation(); lbIndex = (lbIndex + 1) % currentMedia.length; renderLightbox(); });
-$("#lightbox").addEventListener("click", (e) => {
+$("#lb-prev").addEventListener("click", function (e) {
+  e.stopPropagation();
+  lbIndex = (lbIndex - 1 + currentMedia.length) % currentMedia.length;
+  renderLightbox();
+});
+$("#lb-next").addEventListener("click", function (e) {
+  e.stopPropagation();
+  lbIndex = (lbIndex + 1) % currentMedia.length;
+  renderLightbox();
+});
+$("#lightbox").addEventListener("click", function (e) {
   if (e.target === $("#lightbox") || e.target === $("#lb-stage")) closeLightbox();
 });
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") { closeLightbox(); $("#modal-about").classList.add("hidden"); }
-  if (e.key === "ArrowLeft" && !$("#lightbox").classList.contains("hidden")) { lbIndex = (lbIndex - 1 + currentMedia.length) % currentMedia.length; renderLightbox(); }
-  if (e.key === "ArrowRight" && !$("#lightbox").classList.contains("hidden")) { lbIndex = (lbIndex + 1) % currentMedia.length; renderLightbox(); }
-});
-
-/* ---------- 关于与版本更新 ---------- */
-async function checkVersion() {
-  $("#ver-latest").textContent = "检查中…";
-  try {
-    const res = await fetch("https://api.github.com/repos/" + GITHUB_REPO + "/releases/latest", { headers: { Accept: "application/vnd.github+json" } });
-    if (!res.ok) throw new Error("none");
-    const rel = await res.json();
-    $("#ver-latest").textContent = (rel.tag_name || rel.name || "有新版本");
-  } catch (_) {
-    $("#ver-latest").textContent = "暂无更新信息";
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    closeLightbox();
+    $("#modal-about").classList.add("hidden");
   }
+  if (e.key === "ArrowLeft" && !$("#lightbox").classList.contains("hidden")) {
+    lbIndex = (lbIndex - 1 + currentMedia.length) % currentMedia.length;
+    renderLightbox();
+  }
+  if (e.key === "ArrowRight" && !$("#lightbox").classList.contains("hidden")) {
+    lbIndex = (lbIndex + 1) % currentMedia.length;
+    renderLightbox();
+  }
+});
+function checkVersion() {
+  return _checkVersion.apply(this, arguments);
 }
-
-/* ---------- 认证页事件 ---------- */
-let authMode = "login";
-$("#tab-login").addEventListener("click", () => {
+function _checkVersion() {
+  _checkVersion = _asyncToGenerator(_regenerator().m(function _callee18() {
+    var res, rel, _t10;
+    return _regenerator().w(function (_context19) {
+      while (1) switch (_context19.p = _context19.n) {
+        case 0:
+          $("#ver-latest").textContent = "检查中…";
+          _context19.p = 1;
+          _context19.n = 2;
+          return fetch("https://api.github.com/repos/" + GITHUB_REPO + "/releases/latest", {
+            headers: {
+              Accept: "application/vnd.github+json"
+            }
+          });
+        case 2:
+          res = _context19.v;
+          if (res.ok) {
+            _context19.n = 3;
+            break;
+          }
+          throw new Error("none");
+        case 3:
+          _context19.n = 4;
+          return res.json();
+        case 4:
+          rel = _context19.v;
+          $("#ver-latest").textContent = rel.tag_name || rel.name || "有新版本";
+          _context19.n = 6;
+          break;
+        case 5:
+          _context19.p = 5;
+          _t10 = _context19.v;
+          $("#ver-latest").textContent = "暂无更新信息";
+        case 6:
+          return _context19.a(2);
+      }
+    }, _callee18, null, [[1, 5]]);
+  }));
+  return _checkVersion.apply(this, arguments);
+}
+var authMode = "login";
+$("#tab-login").addEventListener("click", function () {
   authMode = "login";
-  $("#tab-login").classList.add("on"); $("#tab-register").classList.remove("on");
+  $("#tab-login").classList.add("on");
+  $("#tab-register").classList.remove("on");
   $("#field-nickname").classList.add("hidden");
   $("#btn-auth").textContent = "进入家相册";
 });
-$("#tab-register").addEventListener("click", () => {
+$("#tab-register").addEventListener("click", function () {
   authMode = "register";
-  $("#tab-register").classList.add("on"); $("#tab-login").classList.remove("on");
+  $("#tab-register").classList.add("on");
+  $("#tab-login").classList.remove("on");
   $("#field-nickname").classList.remove("hidden");
   $("#btn-auth").textContent = "注册并进入";
 });
-$("#form-auth").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const email = $("#inp-email").value.trim();
-  const password = $("#inp-password").value;
-  const nickname = $("#inp-nickname").value.trim();
-  if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { toast("请输入正确的邮箱", "err"); return; }
-  if (password.length < 6) { toast("密码至少 6 位", "err"); return; }
-  if (authMode === "register" && !nickname) { toast("请填写称呼", "err"); return; }
-  const btn = $("#btn-auth");
-  btn.disabled = true; btn.textContent = "请稍候…";
-  try {
-    if (authMode === "register") {
-      const data = await authSignup(email, password, nickname);
-      if (!data || !data.access_token) { toast("注册成功，请先到邮箱点击确认链接，再回来登录", "ok", 4200); return; }
-    } else {
-      await authLogin(email, password);
+$("#form-auth").addEventListener("submit", function () {
+  var _ref2 = _asyncToGenerator(_regenerator().m(function _callee2(e) {
+    var email, password, nickname, btn, data, _t2;
+    return _regenerator().w(function (_context2) {
+      while (1) switch (_context2.p = _context2.n) {
+        case 0:
+          e.preventDefault();
+          email = $("#inp-email").value.trim();
+          password = $("#inp-password").value;
+          nickname = $("#inp-nickname").value.trim();
+          if (/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+            _context2.n = 1;
+            break;
+          }
+          toast("请输入正确的邮箱", "err");
+          return _context2.a(2);
+        case 1:
+          if (!(password.length < 6)) {
+            _context2.n = 2;
+            break;
+          }
+          toast("密码至少 6 位", "err");
+          return _context2.a(2);
+        case 2:
+          if (!(authMode === "register" && !nickname)) {
+            _context2.n = 3;
+            break;
+          }
+          toast("请填写称呼", "err");
+          return _context2.a(2);
+        case 3:
+          btn = $("#btn-auth");
+          btn.disabled = true;
+          btn.textContent = "请稍候…";
+          _context2.p = 4;
+          if (!(authMode === "register")) {
+            _context2.n = 7;
+            break;
+          }
+          _context2.n = 5;
+          return authSignup(email, password, nickname);
+        case 5:
+          data = _context2.v;
+          if (!(!data || !data.access_token)) {
+            _context2.n = 6;
+            break;
+          }
+          toast("注册成功，请先到邮箱点击确认链接，再回来登录", "ok", 4200);
+          return _context2.a(2);
+        case 6:
+          _context2.n = 8;
+          break;
+        case 7:
+          _context2.n = 8;
+          return authLogin(email, password);
+        case 8:
+          toast("欢迎回来", "ok");
+          _context2.n = 9;
+          return boot();
+        case 9:
+          _context2.n = 11;
+          break;
+        case 10:
+          _context2.p = 10;
+          _t2 = _context2.v;
+          toast(errText(_t2), "err", 3400);
+        case 11:
+          _context2.p = 11;
+          btn.disabled = false;
+          btn.textContent = authMode === "register" ? "注册并进入" : "进入家相册";
+          return _context2.f(11);
+        case 12:
+          return _context2.a(2);
+      }
+    }, _callee2, null, [[4, 10, 11, 12]]);
+  }));
+  return function (_x14) {
+    return _ref2.apply(this, arguments);
+  };
+}());
+$("#seg-create").addEventListener("click", function () {
+  $("#seg-create").classList.add("on");
+  $("#seg-join").classList.remove("on");
+  $("#panel-create").classList.remove("hidden");
+  $("#panel-join").classList.add("hidden");
+});
+$("#seg-join").addEventListener("click", function () {
+  $("#seg-join").classList.add("on");
+  $("#seg-create").classList.remove("on");
+  $("#panel-join").classList.remove("hidden");
+  $("#panel-create").classList.add("hidden");
+});
+$("#btn-create-family").addEventListener("click", _asyncToGenerator(_regenerator().m(function _callee3() {
+  var name, btn, fam, _t3;
+  return _regenerator().w(function (_context3) {
+    while (1) switch (_context3.p = _context3.n) {
+      case 0:
+        name = $("#inp-family-name").value.trim();
+        if (name) {
+          _context3.n = 1;
+          break;
+        }
+        toast("请填写家族名字", "err");
+        return _context3.a(2);
+      case 1:
+        btn = $("#btn-create-family");
+        btn.disabled = true;
+        btn.textContent = "创建中…";
+        _context3.p = 2;
+        _context3.n = 3;
+        return createFamily(name);
+      case 3:
+        fam = _context3.v;
+        Session.saveFamily(fam);
+        toast("家族创建成功，邀请码：" + fam.invite_code, "ok", 4200);
+        _context3.n = 4;
+        return enterAlbum();
+      case 4:
+        _context3.n = 6;
+        break;
+      case 5:
+        _context3.p = 5;
+        _t3 = _context3.v;
+        toast(errText(_t3), "err");
+      case 6:
+        _context3.p = 6;
+        btn.disabled = false;
+        btn.textContent = "创建并进入";
+        return _context3.f(6);
+      case 7:
+        return _context3.a(2);
     }
-    toast("欢迎回来", "ok");
-    await boot();
-  } catch (err) {
-    toast(errText(err), "err", 3400);
-  } finally {
-    btn.disabled = false;
-    btn.textContent = authMode === "register" ? "注册并进入" : "进入家相册";
+  }, _callee3, null, [[2, 5, 6, 7]]);
+})));
+$("#btn-join-family").addEventListener("click", _asyncToGenerator(_regenerator().m(function _callee4() {
+  var code, btn, fid, fam, m, _t4;
+  return _regenerator().w(function (_context4) {
+    while (1) switch (_context4.p = _context4.n) {
+      case 0:
+        code = $("#inp-code").value.trim().toUpperCase();
+        if (!(code.length !== 6)) {
+          _context4.n = 1;
+          break;
+        }
+        toast("邀请码是 6 位", "err");
+        return _context4.a(2);
+      case 1:
+        btn = $("#btn-join-family");
+        btn.disabled = true;
+        btn.textContent = "加入中…";
+        _context4.p = 2;
+        _context4.n = 3;
+        return joinFamily(code);
+      case 3:
+        fid = _context4.v;
+        _context4.n = 4;
+        return apiFetch(SUPABASE_URL + "/rest/v1/families?id=eq." + fid + "&select=*", {
+          headers: apiHeaders(Session.token)
+        });
+      case 4:
+        fam = _context4.v;
+        Session.saveFamily(Array.isArray(fam) ? fam[0] : fam);
+        toast("已加入家族", "ok");
+        _context4.n = 5;
+        return enterAlbum();
+      case 5:
+        _context4.n = 7;
+        break;
+      case 6:
+        _context4.p = 6;
+        _t4 = _context4.v;
+        m = errText(_t4);
+        toast(/不存在|not found/i.test(m) ? "邀请码不正确，请核对" : m, "err");
+      case 7:
+        _context4.p = 7;
+        btn.disabled = false;
+        btn.textContent = "加入";
+        return _context4.f(7);
+      case 8:
+        return _context4.a(2);
+    }
+  }, _callee4, null, [[2, 6, 7, 8]]);
+})));
+$("#btn-upload").addEventListener("click", function () {
+  return $("#file-input").click();
+});
+$("#file-input").addEventListener("change", function (e) {
+  handleFiles(e.target.files);
+  e.target.value = "";
+});
+var dragDepth = 0;
+document.addEventListener("dragenter", function (e) {
+  if (!$("#view-album").classList.contains("hidden")) {
+    e.preventDefault();
+    dragDepth++;
+    $("#drop-mask").classList.remove("hidden");
   }
 });
-
-/* ---------- 欢迎页事件 ---------- */
-$("#seg-create").addEventListener("click", () => {
-  $("#seg-create").classList.add("on"); $("#seg-join").classList.remove("on");
-  $("#panel-create").classList.remove("hidden"); $("#panel-join").classList.add("hidden");
+document.addEventListener("dragover", function (e) {
+  return e.preventDefault();
 });
-$("#seg-join").addEventListener("click", () => {
-  $("#seg-join").classList.add("on"); $("#seg-create").classList.remove("on");
-  $("#panel-join").classList.remove("hidden"); $("#panel-create").classList.add("hidden");
-});
-$("#btn-create-family").addEventListener("click", async () => {
-  const name = $("#inp-family-name").value.trim();
-  if (!name) { toast("请填写家族名字", "err"); return; }
-  const btn = $("#btn-create-family");
-  btn.disabled = true; btn.textContent = "创建中…";
-  try {
-    const fam = await createFamily(name);
-    Session.saveFamily(fam);
-    toast("家族创建成功，邀请码：" + fam.invite_code, "ok", 4200);
-    await enterAlbum();
-  } catch (err) { toast(errText(err), "err"); }
-  finally { btn.disabled = false; btn.textContent = "创建并进入"; }
-});
-$("#btn-join-family").addEventListener("click", async () => {
-  const code = $("#inp-code").value.trim().toUpperCase();
-  if (code.length !== 6) { toast("邀请码是 6 位", "err"); return; }
-  const btn = $("#btn-join-family");
-  btn.disabled = true; btn.textContent = "加入中…";
-  try {
-    const fid = await joinFamily(code);
-    const fam = await apiFetch(SUPABASE_URL + "/rest/v1/families?id=eq." + fid + "&select=*", { headers: apiHeaders(Session.token) });
-    Session.saveFamily(Array.isArray(fam) ? fam[0] : fam);
-    toast("已加入家族", "ok");
-    await enterAlbum();
-  } catch (err) {
-    const m = errText(err);
-    toast(/不存在|not found/i.test(m) ? "邀请码不正确，请核对" : m, "err");
-  } finally { btn.disabled = false; btn.textContent = "加入"; }
-});
-
-/* ---------- 相册事件 ---------- */
-$("#btn-upload").addEventListener("click", () => $("#file-input").click());
-$("#file-input").addEventListener("change", (e) => { handleFiles(e.target.files); e.target.value = ""; });
-
-let dragDepth = 0;
-document.addEventListener("dragenter", (e) => {
-  if (!$("#view-album").classList.contains("hidden")) { e.preventDefault(); dragDepth++; $("#drop-mask").classList.remove("hidden"); }
-});
-document.addEventListener("dragover", (e) => e.preventDefault());
-document.addEventListener("dragleave", () => {
+document.addEventListener("dragleave", function () {
   dragDepth = Math.max(0, dragDepth - 1);
   if (!dragDepth) $("#drop-mask").classList.add("hidden");
 });
-document.addEventListener("drop", (e) => {
+document.addEventListener("drop", function (e) {
   e.preventDefault();
   dragDepth = 0;
   $("#drop-mask").classList.add("hidden");
   if (!$("#view-album").classList.contains("hidden") && e.dataTransfer && e.dataTransfer.files) handleFiles(e.dataTransfer.files);
 });
-
-$("#tb-invite-code").addEventListener("click", async () => {
-  const fam = Session.family;
-  if (!fam) return;
-  try { await navigator.clipboard.writeText(fam.invite_code); toast("邀请码已复制：" + fam.invite_code, "ok"); }
-  catch (_) { toast("邀请码：" + fam.invite_code, "info", 5000); }
+$("#tb-invite-code").addEventListener("click", _asyncToGenerator(_regenerator().m(function _callee5() {
+  var fam, _t5;
+  return _regenerator().w(function (_context5) {
+    while (1) switch (_context5.p = _context5.n) {
+      case 0:
+        fam = Session.family;
+        if (fam) {
+          _context5.n = 1;
+          break;
+        }
+        return _context5.a(2);
+      case 1:
+        _context5.p = 1;
+        _context5.n = 2;
+        return navigator.clipboard.writeText(fam.invite_code);
+      case 2:
+        toast("邀请码已复制：" + fam.invite_code, "ok");
+        _context5.n = 4;
+        break;
+      case 3:
+        _context5.p = 3;
+        _t5 = _context5.v;
+        toast("邀请码：" + fam.invite_code, "info", 5000);
+      case 4:
+        return _context5.a(2);
+    }
+  }, _callee5, null, [[1, 3]]);
+})));
+$("#btn-avatar").addEventListener("click", function (e) {
+  e.stopPropagation();
+  $("#menu-user").classList.toggle("hidden");
 });
-
-/* ---------- 用户菜单 ---------- */
-$("#btn-avatar").addEventListener("click", (e) => { e.stopPropagation(); $("#menu-user").classList.toggle("hidden"); });
-document.addEventListener("click", (e) => { if (!e.target.closest(".menu-wrap")) $("#menu-user").classList.add("hidden"); });
-$("#menu-about").addEventListener("click", () => { $("#menu-user").classList.add("hidden"); checkVersion(); $("#modal-about").classList.remove("hidden"); });
-$("#btn-about-close").addEventListener("click", () => $("#modal-about").classList.add("hidden"));
-$("#modal-about").addEventListener("click", (e) => { if (e.target === e.currentTarget) $("#modal-about").classList.add("hidden"); });
-$("#menu-logout").addEventListener("click", () => {
+document.addEventListener("click", function (e) {
+  if (!e.target.closest(".menu-wrap")) $("#menu-user").classList.add("hidden");
+});
+$("#menu-about").addEventListener("click", function () {
+  $("#menu-user").classList.add("hidden");
+  checkVersion();
+  $("#modal-about").classList.remove("hidden");
+});
+$("#btn-about-close").addEventListener("click", function () {
+  return $("#modal-about").classList.add("hidden");
+});
+$("#modal-about").addEventListener("click", function (e) {
+  if (e.target === e.currentTarget) $("#modal-about").classList.add("hidden");
+});
+$("#menu-logout").addEventListener("click", function () {
   Session.clear();
   $("#menu-user").classList.add("hidden");
   showView("view-login");
   toast("已退出登录", "info");
 });
-
-/* ---------- 启动 ---------- */
 $("#ver-current").textContent = APP_VERSION;
-boot().catch(err => { toast("初始化失败：" + errText(err), "err"); });
-</script>
+boot().catch(function (err) {
+  toast("初始化失败：" + errText(err), "err");
+});</script>
 </body>
 </html>
